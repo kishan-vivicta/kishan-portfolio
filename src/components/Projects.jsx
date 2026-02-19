@@ -8,8 +8,7 @@ export const Projects = () => (
       Featured Projects
     </h2>
     <p className="section-subtitle">
-      Selected initiatives showcasing Azure, Kubernetes, IaC, and AI platform
-      expertise.
+      Selected initiatives showcasing Azure, Kubernetes, IaC, and AI platform expertise.
     </p>
     <div className="card-grid">
       {profile.projects.map((proj) => (
