@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { profile } from "../data/profileData";
 
 export const Hero = () => {
@@ -16,7 +17,7 @@ export const Hero = () => {
           <p
             style={{
               fontSize: 13,
-              color: "#a5b4fc",
+              color: "#6366f1",
               textTransform: "uppercase",
               letterSpacing: 1.4,
               marginBottom: 8
@@ -30,7 +31,7 @@ export const Hero = () => {
               lineHeight: 1.15,
               marginBottom: 10,
               background:
-                "linear-gradient(to right,#e5e7eb,#a5b4fc,#22d3ee,#a5b4fc)",
+                "linear-gradient(to right,#3b82f6,#8b5cf6,#ec4899,#f97316)",
               WebkitBackgroundClip: "text",
               color: "transparent"
             }}
@@ -40,7 +41,7 @@ export const Hero = () => {
           <p
             style={{
               fontSize: 14,
-              color: "#9ca3af",
+              color: "#64748b",
               maxWidth: 540,
               marginBottom: 16
             }}
@@ -64,11 +65,8 @@ export const Hero = () => {
           </div>
 
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <button
-              onClick={() => {
-                const el = document.getElementById("projects");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }}
+            <Link
+              to="/projects"
               style={{
                 padding: "9px 18px",
                 borderRadius: 999,
@@ -76,24 +74,26 @@ export const Hero = () => {
                 fontSize: 13,
                 cursor: "pointer",
                 background:
-                  "linear-gradient(135deg,#22d3ee,#4f46e5,#22d3ee)",
-                color: "#0b1120",
+                  "linear-gradient(135deg,#3b82f6,#8b5cf6,#ec4899)",
+                color: "#ffffff",
                 fontWeight: 600,
-                boxShadow: "0 16px 45px rgba(37,99,235,0.7)"
+                boxShadow: "0 8px 24px rgba(59, 130, 246, 0.3)",
+                textDecoration: "none",
+                display: "inline-block"
               }}
             >
               View featured projects
-            </button>
+            </Link>
             <a
               href={`mailto:${profile.contacts.email}`}
               style={{
                 padding: "9px 16px",
                 borderRadius: 999,
-                border: "1px solid rgba(148,163,184,0.7)",
+                border: "1px solid rgba(59, 130, 246, 0.3)",
                 fontSize: 13,
                 cursor: "pointer",
-                background: "rgba(15,23,42,0.8)",
-                color: "#e5e7eb",
+                background: "rgba(255, 255, 255, 0.8)",
+                color: "#1e293b",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8
@@ -115,7 +115,7 @@ export const Hero = () => {
         <div
           style={{
             position: "relative",
-            minHeight: 220
+            minHeight: 280
           }}
         >
           <div
@@ -124,15 +124,14 @@ export const Hero = () => {
               inset: 10,
               borderRadius: "24px",
               background:
-                "radial-gradient(circle at top,#1f2937,#020617 60%)",
-              border: "1px solid rgba(148,163,184,0.35)",
+                "linear-gradient(135deg, #ffffff, #f8fafc)",
+              border: "1px solid rgba(148,163,184,0.25)",
               boxShadow:
-                "0 18px 50px rgba(15,23,42,1), 0 0 0 1px rgba(15,23,42,1)",
+                "0 8px 24px rgba(0,0,0,0.08)",
               padding: 18,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-between",
-              overflow: "hidden"
+              justifyContent: "space-between"
             }}
           >
             <div
@@ -155,7 +154,7 @@ export const Hero = () => {
                 <div
                   style={{
                     fontSize: 11,
-                    color: "#9ca3af"
+                    color: "#64748b"
                   }}
                 >
                   {profile.role}
@@ -166,8 +165,9 @@ export const Hero = () => {
                   fontSize: 11,
                   padding: "4px 9px",
                   borderRadius: 999,
-                  border: "1px solid rgba(56,189,248,0.7)",
-                  background: "rgba(15,23,42,0.9)"
+                  border: "1px solid rgba(59, 130, 246, 0.3)",
+                  background: "rgba(59, 130, 246, 0.05)",
+                  color: "#3b82f6"
                 }}
               >
                 Azure · Kubernetes · AI
@@ -180,11 +180,11 @@ export const Hero = () => {
                 gridTemplateColumns: "repeat(2,minmax(0,1fr))",
                 gap: 12,
                 fontSize: 11,
-                color: "#9ca3af"
+                color: "#64748b"
               }}
             >
               <div>
-                <div style={{ color: "#e5e7eb", marginBottom: 4 }}>
+                <div style={{ color: "#1e293b", marginBottom: 4 }}>
                   Cloud & DevOps
                 </div>
                 <ul style={{ paddingLeft: 16, margin: 0 }}>
@@ -194,7 +194,7 @@ export const Hero = () => {
                 </ul>
               </div>
               <div>
-                <div style={{ color: "#e5e7eb", marginBottom: 4 }}>
+                <div style={{ color: "#1e293b", marginBottom: 4 }}>
                   AI & Automation
                 </div>
                 <ul style={{ paddingLeft: 16, margin: 0 }}>
@@ -212,12 +212,12 @@ export const Hero = () => {
                 alignItems: "flex-end",
                 marginTop: 10,
                 fontSize: 11,
-                color: "#9ca3af"
+                color: "#64748b"
               }}
             >
               <div>
                 <div style={{ marginBottom: 2 }}>Location</div>
-                <div style={{ color: "#e5e7eb" }}>{profile.location}</div>
+                <div style={{ color: "#1e293b" }}>{profile.location}</div>
               </div>
               <div
                 style={{
@@ -245,9 +245,9 @@ export const Hero = () => {
               position: "absolute",
               inset: 0,
               filter: "blur(28px)",
-              opacity: 0.7,
+              opacity: 0.3,
               background:
-                "radial-gradient(circle at 10% 0,#22d3ee33,transparent 55%)"
+                "radial-gradient(circle at 10% 0,#3b82f644,transparent 55%)"
             }}
           />
         </div>

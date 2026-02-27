@@ -6,14 +6,6 @@ export const Skills = () => {
 
   return (
     <section id="skills" className="section fade-in-up">
-      <h2 className="section-heading">
-        <span />
-        Skills
-      </h2>
-      <p className="section-subtitle">
-        A blend of Azure architecture, DevOps engineering, AI platforms, and
-        automation.
-      </p>
       <div className="card-grid">
         <div className="card">
           <div className="card-title">Cloud & DevOps</div>

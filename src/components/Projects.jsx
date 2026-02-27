@@ -3,13 +3,6 @@ import { profile } from "../data/profileData";
 
 export const Projects = () => (
   <section id="projects" className="section fade-in-up">
-    <h2 className="section-heading">
-      <span />
-      Featured Projects
-    </h2>
-    <p className="section-subtitle">
-      Selected initiatives showcasing Azure, Kubernetes, IaC, and AI platform expertise.
-    </p>
     <div className="card-grid">
       {profile.projects.map((proj) => (
         <div key={proj.name} className="card">

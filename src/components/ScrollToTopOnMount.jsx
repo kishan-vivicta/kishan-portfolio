@@ -5,7 +5,12 @@ export const ScrollToTopOnMount = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Scroll to top immediately on route change
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant" // Use instant for immediate scroll on navigation
+    });
   }, [pathname]);
 
   return null;

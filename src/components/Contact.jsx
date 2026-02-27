@@ -3,13 +3,7 @@ import { profile } from "../data/profileData";
 
 export const Contact = () => (
   <section id="contact" className="section fade-in-up">
-    <h2 className="section-heading">
-      <span />
-      Contact
-    </h2>
-    <p className="section-subtitle">
-      Interested in Azure, Kubernetes, or AI platform work? Let’s connect.
-    </p>
+
     <div className="card">
       <div
         style={{

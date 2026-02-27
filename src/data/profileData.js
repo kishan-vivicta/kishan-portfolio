@@ -1,18 +1,18 @@
 export const profile = {
   name: "Kishan Kumar",
   role: "Cloud & DevOps Engineer | Azure Architect",
-  location: "Egersund, Rogaland, Norway",
+  location: "Kolkata, India",
   summary:
     "Azure Architect and DevOps Engineer with 9+ years of experience designing, developing, and implementing cloud-native and DevOps solutions on Microsoft Azure. Strong in cloud adoption, IaC, CI/CD, security, and AI platforms.",
   contacts: {
     phone: "+91 9689851960",
     email: "kishankmr.kumar@gmail.com",
     linkedin: "https://www.linkedin.com/in/kishan-kumar-8a5b93b8",
-    github: "https://github.com/kishankmr-kumar"
+    github: "https://github.com/1199692"
   },
   socialHandles: {
     linkedin: "kishan-kumar-8a5b93b8",
-    github: "@kishankmr-kumar"
+    github: "1199692"
   },
   skills: {
     cloudDevOps: [
@@ -167,28 +167,90 @@ export const profile = {
   ],
   education: [
     {
-      degree: "Bachelor of Technology",
+      degree: "Bachelor of Technology (B.Tech)",
+      specialization: "Electrical and Electronics Engineering",
       university: "Biju Patnaik University of Technology",
       location: "Bhubaneswar, India",
-      period: "2012 – 2016"
+      period: "2012 – 2016",
+      link: "https://www.bput.ac.in/",
+      highlights: [
+        "Strong analytical and problem-solving skills",
+        "Foundation in systems design and architecture",
+        "Electrical systems and automation principles"
+      ]
     }
   ],
   certifications: [
-    "AZ-305: Microsoft Certified Azure Solutions Architect Expert",
-    "AI-102: Microsoft Certified Azure AI Engineer Associate",
-    "Career Essentials in Generative AI by Microsoft and LinkedIn",
-    "AZ-400: Designing and Implementing Microsoft DevOps Solutions – A Cloud Guru",
-    "Kubernetes Administrator (2020)",
-    "AZ-140: Microsoft Certified Azure Administrator Associate (2020)",
-    "Introduction to Python for Data Science – Microsoft (2020)",
-    "Big Data Foundation (204g)",
-    "Other foundational finance and analytics certifications"
+    {
+      name: "AZ-305: Microsoft Certified Azure Solutions Architect Expert",
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/kishankumar-7879/5A271390DF72B5B8?sharingId=B41DEF08A5D77076"
+    },
+    {
+      name: "AI-102: Microsoft Certified Azure AI Engineer Associate",
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/kishankumar-7879/C762606A9393C31B?sharingId=B41DEF08A5D77076"
+    },
+    {
+      name: "AZ-104: Microsoft Certified Azure Administrator Associate",
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/kishankumar-7879/D8663CD9BE973371?sharingId=B41DEF08A5D77076"
+    },
+    {
+      name: "AI-900: Microsoft Certified Azure AI Fundamentals",
+      link: "https://learn.microsoft.com/en-us/users/kishankumar-7879/credentials/certification/azure-ai-fundamentals?tab=credentials-tab"
+    },
+    {
+      name: "AZ-900: Microsoft Certified Azure Fundamentals",
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/kishankumar-7879/4A8F6B97030FD605?sharingId=B41DEF08A5D77076"
+    },
+    {
+      name: "AZ-400: Designing and Implementing Microsoft DevOps Solutions – A Cloud Guru",
+      link: "https://drive.google.com/file/d/1gIo5vL3QlW7wMFXgBJs4xXXntl3wgPGD/view"
+    },
+    {
+      name: "Career Essentials in Generative AI by Microsoft and LinkedIn",
+      link: "https://www.linkedin.com/learning/certificates/856b8b8a9cdecb71f82c1389c7a883b3ef7abb79e09a17d38c695c7f9eb0b064"
+    },
+    {
+      name: "Kubernetes Administrator",
+      link: "https://www.edureka.co/certificates/mycertificate/b459ca9624fcf6807c900ea71a98cd00"
+    },
+    {
+      name: "Big Data Foundation (204g)",
+      link: "https://www.credly.com/badges/e784ddf9-f9d1-4cc3-be28-886031ef6062/public_url"
+    },
+    {
+      name: "Introduction to Python for Data Science – Microsoft",
+      link: "https://courses.edx.org/certificates/fed1ad590f22430a925c681792cfdfca"
+    },
+    {
+      name: "Other foundational finance and analytics certifications",
+      link: null
+    }
   ],
   awards: [
-    "Best Team Member Award – DNB Bank ASA",
-    "Emerging Leader Award – Tata Consultancy Services Pvt Ltd",
-    "Hackathon Runner-up – DNB Bank ASA",
-    "On the Spot Award – Tata Consultancy Services Pvt Ltd"
+    {
+      title: "Best Team Member Award",
+      organization: "DNB Bank ASA",
+      year: "2021",
+      description: "Recognized for exceptional collaboration, dedication, and outstanding contributions to team success"
+    },
+    {
+      title: "Emerging Leader Award",
+      organization: "Tata Consultancy Services Pvt Ltd",
+      year: "2019",
+      description: "Acknowledged for demonstrating leadership potential and driving innovation in cloud projects"
+    },
+    {
+      title: "Hackathon Runner-up",
+      organization: "DNB Bank ASA",
+      year: "2022",
+      description: "Secured second place in internal hackathon for developing an innovative cloud automation solution"
+    },
+    {
+      title: "On the Spot Award",
+      organization: "Tata Consultancy Services Pvt Ltd",
+      year: "2018",
+      description: "Awarded for quick problem-solving and exceptional performance in critical production issues"
+    }
   ],
   hobbies: ["Music", "Playing guitar", "Reading"],
   languages: ["Norsk", "English"]

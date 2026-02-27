@@ -16,10 +16,10 @@ export const Footer = () => {
 
   return (
     <footer style={{
-      background: "linear-gradient(to top, rgba(15,23,42,0.98), rgba(15,23,42,0.8), transparent)",
-      borderTop: "1px solid rgba(148,163,184,0.25)",
+      background: "rgba(255, 255, 255, 0.85)",
       marginTop: "80px",
-      padding: "48px 0 24px"
+      padding: "48px 0 24px",
+      borderTop: "1px solid rgba(148,163,184,0.15)"
     }}>
       <div className="app-container">
         <div style={{
@@ -33,9 +33,8 @@ export const Footer = () => {
             <h3 style={{ 
               fontSize: "1.2rem", 
               marginBottom: "16px",
-              background: "linear-gradient(to right, #e5e7eb, #a5b4fc)",
-              WebkitBackgroundClip: "text",
-              color: "transparent"
+              color: "#1e293b",
+              fontWeight: "700"
             }}>
               {profile.name}
             </h3>
@@ -67,7 +66,7 @@ export const Footer = () => {
             <h3 style={{ 
               fontSize: "1.1rem", 
               marginBottom: "16px",
-              color: "#e5e7eb"
+              color: "#1e293b"
             }}>
               Quick Links
             </h3>
@@ -102,16 +101,18 @@ export const Footer = () => {
             <h3 style={{ 
               fontSize: "1.1rem", 
               marginBottom: "16px",
-              color: "#e5e7eb"
+              color: "#1e293b"
             }}>
               Connect
             </h3>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              {profile.linkedin && (
+              {/* LinkedIn */}
+              {profile.contacts.linkedin && (
                 <a 
-                  href={profile.linkedin}
+                  href={profile.contacts.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="LinkedIn"
                   style={{
                     width: "40px",
                     height: "40px",
@@ -122,44 +123,110 @@ export const Footer = () => {
                     justifyContent: "center",
                     color: "#0077b5",
                     fontSize: "1.2rem",
+                    fontWeight: "bold",
                     transition: "transform 0.2s, background 0.2s"
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.transform = "translateY(-4px)";
-                    e.target.style.background = "rgba(0, 119, 181, 0.2)";
+                    e.currentTarget.style.transform = "translateY(-4px)";
+                    e.currentTarget.style.background = "rgba(0, 119, 181, 0.2)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.transform = "translateY(0)";
-                    e.target.style.background = "rgba(0, 119, 181, 0.1)";
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.background = "rgba(0, 119, 181, 0.1)";
                   }}
                 >
                   in
                 </a>
               )}
-              {profile.github && (
+              
+              {/* WhatsApp */}
+              {profile.contacts.phone && (
                 <a 
-                  href={profile.github}
+                  href={`https://wa.me/${profile.contacts.phone.replace(/[^0-9]/g, '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="WhatsApp"
                   style={{
                     width: "40px",
                     height: "40px",
                     borderRadius: "8px",
-                    background: "rgba(255, 255, 255, 0.05)",
+                    background: "rgba(37, 211, 102, 0.1)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#e5e7eb",
+                    color: "#25D366",
+                    fontSize: "1.3rem",
+                    transition: "transform 0.2s, background 0.2s"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-4px)";
+                    e.currentTarget.style.background = "rgba(37, 211, 102, 0.2)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.background = "rgba(37, 211, 102, 0.1)";
+                  }}
+                >
+                  &#9990;
+                </a>
+              )}
+              
+              {/* Gmail */}
+              {profile.contacts.email && (
+                <a 
+                  href={`mailto:${profile.contacts.email}`}
+                  title="Gmail"
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "8px",
+                    background: "rgba(234, 67, 53, 0.1)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#EA4335",
                     fontSize: "1.2rem",
                     transition: "transform 0.2s, background 0.2s"
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.transform = "translateY(-4px)";
-                    e.target.style.background = "rgba(255, 255, 255, 0.1)";
+                    e.currentTarget.style.transform = "translateY(-4px)";
+                    e.currentTarget.style.background = "rgba(234, 67, 53, 0.2)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.transform = "translateY(0)";
-                    e.target.style.background = "rgba(255, 255, 255, 0.05)";
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.background = "rgba(234, 67, 53, 0.1)";
+                  }}
+                >
+                  &#9993;
+                </a>
+              )}
+              
+              {/* GitHub */}
+              {profile.contacts.github && (
+                <a 
+                  href={profile.contacts.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="GitHub"
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "8px",
+                    background: "rgba(51, 51, 51, 0.1)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#333",
+                    fontSize: "1.3rem",
+                    transition: "transform 0.2s, background 0.2s"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-4px)";
+                    e.currentTarget.style.background = "rgba(51, 51, 51, 0.2)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.background = "rgba(51, 51, 51, 0.1)";
                   }}
                 >
                   <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
