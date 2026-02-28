@@ -17,8 +17,10 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 import "./index.css";
 
 function App() {
+  const basename = import.meta.env.BASE_URL || '/kishan-portfolio';
+  
   return (
-    <Router basename="/kishan-portfolio">
+    <Router basename={basename}>
       <ScrollToTopOnMount />
       <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
         <Navbar />
