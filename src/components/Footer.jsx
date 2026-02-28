@@ -44,8 +44,36 @@ export const Footer = () => {
               lineHeight: "1.6",
               marginBottom: "16px"
             }}>
-              {profile.tagline || "Building innovative solutions with cloud technology"}
+              Azure Architect and DevOps Engineer specializing in cloud-native solutions, AI platforms, and enterprise infrastructure automation.
             </p>
+            
+            {/* Status Badge */}
+            <div style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "8px 16px",
+              background: "linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.05))",
+              borderRadius: "999px",
+              border: "1px solid rgba(34, 197, 94, 0.2)",
+              marginBottom: "16px"
+            }}>
+              <span style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                background: "radial-gradient(circle, #22c55e, #10b981)",
+                boxShadow: "0 0 8px rgba(34, 197, 94, 0.5)"
+              }} />
+              <span style={{
+                fontSize: "0.85rem",
+                fontWeight: "600",
+                color: "#059669"
+              }}>
+                Open to Cloud & AI Opportunities
+              </span>
+            </div>
+            
             {profile.email && (
               <a href={`mailto:${profile.email}`} style={{ 
                 color: "var(--accent)", 

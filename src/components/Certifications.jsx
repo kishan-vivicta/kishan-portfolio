@@ -89,7 +89,7 @@ export const Certifications = () => (
         gap: "12px"
       }}>
         <p style={{ margin: 0 }}>
-          <strong style={{ color: "#0078D4" }}>5 Microsoft Azure Certifications</strong> spanning Expert, Associate, and Fundamentals levels, demonstrating comprehensive expertise across Azure Solutions Architecture, AI Engineering, and Cloud Administration.
+          <strong style={{ color: "#0078D4" }}>11 Professional Certifications</strong> including 5 Microsoft Azure Certifications spanning Expert, Associate, and Fundamentals levels, plus 6 specialized certifications in Kubernetes, AI, DevOps, and Data Science.
         </p>
         <div style={{
           display: "grid",
@@ -126,6 +126,16 @@ export const Certifications = () => (
             <div style={{ fontSize: "1.5rem", marginBottom: "4px" }}>📘</div>
             <div style={{ fontSize: "0.85rem", fontWeight: "600", color: "#0078D4" }}>2 Fundamentals</div>
             <div style={{ fontSize: "0.75rem", color: "#64748b" }}>Azure & AI Foundations</div>
+          </div>
+          <div style={{
+            padding: "12px",
+            background: "rgba(255, 255, 255, 0.7)",
+            borderRadius: "8px",
+            border: "1px solid rgba(59, 130, 246, 0.15)"
+          }}>
+            <div style={{ fontSize: "1.5rem", marginBottom: "4px" }}>🚀</div>
+            <div style={{ fontSize: "0.85rem", fontWeight: "600", color: "#8b5cf6" }}>6 Specialized</div>
+            <div style={{ fontSize: "0.75rem", color: "#64748b" }}>K8s, AI, DevOps, Data</div>
           </div>
         </div>
         <p style={{ margin: "8px 0 0 0", fontSize: "0.9rem" }}>

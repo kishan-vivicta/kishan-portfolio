@@ -39,6 +39,15 @@ export const profile = {
       "SQL Server",
       "SSMS, SSIS, ETL",
       "Power BI"
+    ],
+    projectManagement: [
+      "Agile & Scrum Methodologies",
+      "Sprint Planning & Backlog Management",
+      "Cross-functional Team Leadership",
+      "Stakeholder Communication & Reporting",
+      "Azure DevOps Boards & Work Items",
+      "GitHub Projects & Issue Tracking",
+      "Project Timeline & Resource Management"
     ]
   },
   experience: [
@@ -91,6 +100,29 @@ export const profile = {
     }
   ],
   projects: [
+    {
+      name: "Azure Landing Zone Infrastructure Management (Infrastructure as Code)",
+      role: "Cloud Infrastructure Architect",
+      bullets: [
+        "Architected and managed enterprise-grade Azure Landing Zone environments using Infrastructure as Code (IaC) principles to ensure consistent, automated, and compliant deployments.",
+        "Designed and implemented Azure Policy frameworks to enforce governance, security standards, and operational compliance across multi-subscription environments.",
+        "Optimized and refactored IaC templates to enhance scalability, modularity, and alignment with best practices for cloud-native architectures.",
+        "Collaborated with cross-functional teams to streamline infrastructure delivery pipelines, improving deployment efficiency and reducing operational overhead.",
+        "Contributed to cloud governance and standardization, supporting organization-wide modernization and cost optimization initiatives."
+      ],
+      techStack: [
+        "Azure Landing Zones",
+        "Terraform",
+        "Bicep",
+        "Azure Policy",
+        "Azure Blueprints",
+        "Azure DevOps",
+        "PowerShell",
+        "Azure CLI",
+        "Git",
+        "YAML"
+      ]
+    },
     {
       name: "AI Foundation Platform – Architecture & Infrastructure Automation",
       customer: "AkerBP",

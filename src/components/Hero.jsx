@@ -12,6 +12,7 @@ export const Hero = () => {
           gap: 20,
           alignItems: "center"
         }}
+        className="hero-grid"
       >
         <div>
           <p
@@ -62,6 +63,7 @@ export const Hero = () => {
             <span className="chip">Terraform & Bicep</span>
             <span className="chip">Azure AI & OpenAI</span>
             <span className="chip">CI/CD & Automation</span>
+            <span className="chip">GitHub Projects</span>
           </div>
 
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
@@ -112,144 +114,176 @@ export const Hero = () => {
           </div>
         </div>
 
+        {/* Stats Cards */}
         <div
           style={{
-            position: "relative",
-            minHeight: 280
+            display: "flex",
+            flexDirection: "column",
+            gap: "16px",
+            position: "relative"
           }}
         >
+          {/* Years Experience */}
           <div
             style={{
-              position: "absolute",
-              inset: 10,
-              borderRadius: "24px",
-              background:
-                "linear-gradient(135deg, #ffffff, #f8fafc)",
-              border: "1px solid rgba(148,163,184,0.25)",
-              boxShadow:
-                "0 8px 24px rgba(0,0,0,0.08)",
-              padding: 18,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between"
+              padding: "24px",
+              borderRadius: "16px",
+              background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+              border: "1px solid rgba(59, 130, 246, 0.2)",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+              position: "relative",
+              overflow: "hidden",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginBottom: 10,
-                alignItems: "center"
-              }}
-            >
-              <div>
-                <div
-                  style={{
-                    fontSize: 13,
-                    fontWeight: 600
-                  }}
-                >
-                  {profile.name}
-                </div>
-                <div
-                  style={{
-                    fontSize: 11,
-                    color: "#64748b"
-                  }}
-                >
-                  {profile.role}
-                </div>
-              </div>
-              <div
-                style={{
-                  fontSize: 11,
-                  padding: "4px 9px",
-                  borderRadius: 999,
-                  border: "1px solid rgba(59, 130, 246, 0.3)",
-                  background: "rgba(59, 130, 246, 0.05)",
-                  color: "#3b82f6"
-                }}
-              >
-                Azure · Kubernetes · AI
-              </div>
+            <div style={{
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              fontSize: "3.5rem",
+              opacity: 0.06
+            }}>
+              💼
             </div>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2,minmax(0,1fr))",
-                gap: 12,
-                fontSize: 11,
-                color: "#64748b"
-              }}
-            >
-              <div>
-                <div style={{ color: "#1e293b", marginBottom: 4 }}>
-                  Cloud & DevOps
-                </div>
-                <ul style={{ paddingLeft: 16, margin: 0 }}>
-                  <li>Azure, AKS, CAF</li>
-                  <li>Terraform, Bicep, Helm</li>
-                  <li>CI/CD with Azure DevOps</li>
-                </ul>
-              </div>
-              <div>
-                <div style={{ color: "#1e293b", marginBottom: 4 }}>
-                  AI & Automation
-                </div>
-                <ul style={{ paddingLeft: 16, margin: 0 }}>
-                  <li>Azure AI & OpenAI</li>
-                  <li>Python, PowerShell</li>
-                  <li>Secure AI workloads</li>
-                </ul>
-              </div>
+            <div style={{
+              fontSize: "2.5rem",
+              fontWeight: "800",
+              background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              marginBottom: "4px",
+              position: "relative",
+              zIndex: 1
+            }}>
+              9+
             </div>
-
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "flex-end",
-                marginTop: 10,
-                fontSize: 11,
-                color: "#64748b"
-              }}
-            >
-              <div>
-                <div style={{ marginBottom: 2 }}>Location</div>
-                <div style={{ color: "#1e293b" }}>{profile.location}</div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  gap: 8,
-                  alignItems: "center"
-                }}
-              >
-                <span
-                  style={{
-                    width: 7,
-                    height: 7,
-                    borderRadius: 999,
-                    background:
-                      "radial-gradient(circle,#22c55e,transparent)"
-                  }}
-                />
-                <span>Open to cloud & AI opportunities</span>
-              </div>
+            <div style={{
+              fontSize: "0.95rem",
+              color: "#64748b",
+              fontWeight: "600",
+              position: "relative",
+              zIndex: 1
+            }}>
+              Years Experience
+            </div>
+            <div style={{
+              fontSize: "0.8rem",
+              color: "#94a3b8",
+              marginTop: "4px",
+              position: "relative",
+              zIndex: 1
+            }}>
+              Azure Cloud Architecture
             </div>
           </div>
 
+          {/* Certifications */}
           <div
             style={{
-              position: "absolute",
-              inset: 0,
-              filter: "blur(28px)",
-              opacity: 0.3,
-              background:
-                "radial-gradient(circle at 10% 0,#3b82f644,transparent 55%)"
+              padding: "24px",
+              borderRadius: "16px",
+              background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+              border: "1px solid rgba(139, 92, 246, 0.2)",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+              position: "relative",
+              overflow: "hidden",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
             }}
-          />
+          >
+            <div style={{
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              fontSize: "3.5rem",
+              opacity: 0.06
+            }}>
+              🏆
+            </div>
+            <div style={{
+              fontSize: "2.5rem",
+              fontWeight: "800",
+              background: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              marginBottom: "4px",
+              position: "relative",
+              zIndex: 1
+            }}>
+              11
+            </div>
+            <div style={{
+              fontSize: "0.95rem",
+              color: "#64748b",
+              fontWeight: "600",
+              position: "relative",
+              zIndex: 1
+            }}>
+              Professional Certifications
+            </div>
+            <div style={{
+              fontSize: "0.8rem",
+              color: "#94a3b8",
+              marginTop: "4px",
+              position: "relative",
+              zIndex: 1
+            }}>
+              5 Azure + 6 Specialized
+            </div>
+          </div>
+
+          {/* Major Projects */}
+          <div
+            style={{
+              padding: "24px",
+              borderRadius: "16px",
+              background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+              border: "1px solid rgba(236, 72, 153, 0.2)",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+              position: "relative",
+              overflow: "hidden",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+            }}
+          >
+            <div style={{
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              fontSize: "3.5rem",
+              opacity: 0.06
+            }}>
+              🚀
+            </div>
+            <div style={{
+              fontSize: "2.5rem",
+              fontWeight: "800",
+              background: "linear-gradient(135deg, #ec4899 0%, #f97316 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              marginBottom: "4px",
+              position: "relative",
+              zIndex: 1
+            }}>
+              20+
+            </div>
+            <div style={{
+              fontSize: "0.95rem",
+              color: "#64748b",
+              fontWeight: "600",
+              position: "relative",
+              zIndex: 1
+            }}>
+              Major Projects
+            </div>
+            <div style={{
+              fontSize: "0.8rem",
+              color: "#94a3b8",
+              marginTop: "4px",
+              position: "relative",
+              zIndex: 1
+            }}>
+              Enterprise Scale Solutions
+            </div>
+          </div>
         </div>
       </div>
     </section>
