@@ -46,24 +46,3 @@ jobs:
           app_location: '/'
           api_location: ''
           output_location: 'dist'
-
-      - name: Get API Key
-        id: get-api-key
-        run: |
-          if [ -n "${{ needs.terraform.outputs.swa_api_key }}" ]; then
-            echo "Using API key from Terraform output"
-            echo "api_key=${{ needs.terraform.outputs.swa_api_key }}" >> $GITHUB_OUTPUT
-          else
-            echo "Using stored API key from secrets"
-            echo "api_key=${{ secrets.AZURE_STATIC_WEB_APP_API_KEY }}" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Deploy to Azure Static Web Apps
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ steps.get-api-key.outputs.api_key }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/"
-          output_location: "dist"
-          skip_app_build: true
