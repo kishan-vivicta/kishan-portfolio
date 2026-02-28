@@ -1,0 +1,16 @@
+# Example terraform.tfvars file
+# Copy this to terraform.tfvars and customize
+
+resource_group_name  = "kishan-portfolio-rg"
+location            = "westeurope"
+static_web_app_name = "kishan-portfolio-swa"
+sku_tier            = "Free"
+sku_size            = "Free"
+
+tags = {
+  Environment = "Production"
+  Project     = "Portfolio"
+  ManagedBy   = "Terraform"
+  Owner       = "Kishan Kumar"
+  CostCenter  = "Personal"
+}
