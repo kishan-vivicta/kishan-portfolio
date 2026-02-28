@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/kishan-portfolio/'  // Your repo name
+  base: process.env.VITE_BASE_PATH || '/kishan-portfolio/'
 })
