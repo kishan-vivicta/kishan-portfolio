@@ -2,15 +2,32 @@ import React from "react";
 import { profile } from "../data/profileData";
 
 export const About = () => (
-  <section id="about" className="section fade-in-up">
+  <section id="about" className="section fade-in-up" style={{ position: "relative", overflow: "hidden" }}>
+    {/* Animated Background */}
+    <div style={{
+      position: "absolute",
+      top: "15%",
+      left: "5%",
+      width: "350px",
+      height: "350px",
+      background: "radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%)",
+      borderRadius: "50%",
+      filter: "blur(50px)",
+      animation: "float 28s ease-in-out infinite",
+      zIndex: 0
+    }} />
+    
     {/* Highlights Section */}
     <div style={{
       maxWidth: "800px",
       margin: "0 auto 32px",
       padding: "24px",
-      background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)",
+      background: "linear-gradient(135deg, rgba(240,249,255,0.95) 0%, rgba(224,242,254,0.95) 100%)",
+      backdropFilter: "blur(10px)",
       borderRadius: "16px",
-      border: "1px solid rgba(59, 130, 246, 0.2)"
+      border: "1px solid rgba(59, 130, 246, 0.2)",
+      position: "relative",
+      zIndex: 1
     }}>
       <div style={{
         display: "grid",
@@ -23,15 +40,27 @@ export const About = () => (
           padding: "16px",
           background: "white",
           borderRadius: "12px",
-          border: "1px solid rgba(59, 130, 246, 0.15)"
+          border: "1px solid rgba(59, 130, 246, 0.15)",
+          transition: "all 0.3s ease",
+          cursor: "pointer"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-6px) scale(1.05)";
+          e.currentTarget.style.boxShadow = "0 12px 30px rgba(59, 130, 246, 0.2)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0) scale(1)";
+          e.currentTarget.style.boxShadow = "none";
         }}>
           <div style={{
             fontSize: "2.5rem",
             fontWeight: "800",
-            background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+            background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)",
+            backgroundSize: "200% 200%",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            marginBottom: "4px"
+            marginBottom: "4px",
+            animation: "gradientShift 8s ease-in-out infinite"
           }}>
             9+
           </div>
@@ -49,15 +78,27 @@ export const About = () => (
           padding: "16px",
           background: "white",
           borderRadius: "12px",
-          border: "1px solid rgba(59, 130, 246, 0.15)"
+          border: "1px solid rgba(59, 130, 246, 0.15)",
+          transition: "all 0.3s ease",
+          cursor: "pointer"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-6px) scale(1.05)";
+          e.currentTarget.style.boxShadow = "0 12px 30px rgba(139, 92, 246, 0.2)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0) scale(1)";
+          e.currentTarget.style.boxShadow = "none";
         }}>
           <div style={{
             fontSize: "2.5rem",
             fontWeight: "800",
-            background: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+            background: "linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #ec4899 100%)",
+            backgroundSize: "200% 200%",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            marginBottom: "4px"
+            marginBottom: "4px",
+            animation: "gradientShift 8s ease-in-out infinite"
           }}>
             11
           </div>
@@ -75,15 +116,27 @@ export const About = () => (
           padding: "16px",
           background: "white",
           borderRadius: "12px",
-          border: "1px solid rgba(59, 130, 246, 0.15)"
+          border: "1px solid rgba(59, 130, 246, 0.15)",
+          transition: "all 0.3s ease",
+          cursor: "pointer"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-6px) scale(1.05)";
+          e.currentTarget.style.boxShadow = "0 12px 30px rgba(236, 72, 153, 0.2)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0) scale(1)";
+          e.currentTarget.style.boxShadow = "none";
         }}>
           <div style={{
             fontSize: "2.5rem",
             fontWeight: "800",
-            background: "linear-gradient(135deg, #ec4899 0%, #f97316 100%)",
+            background: "linear-gradient(135deg, #ec4899 0%, #f43f5e 50%, #f97316 100%)",
+            backgroundSize: "200% 200%",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            marginBottom: "4px"
+            marginBottom: "4px",
+            animation: "gradientShift 8s ease-in-out infinite"
           }}>
             20+
           </div>
@@ -103,7 +156,8 @@ export const About = () => (
       maxWidth: "800px",
       margin: "0 auto",
       position: "relative",
-      overflow: "visible"
+      overflow: "visible",
+      zIndex: 1
     }}>
       {/* Decorative Icon */}
       <div style={{
@@ -125,14 +179,16 @@ export const About = () => (
         }}>
           <div style={{
             fontSize: "2.5rem",
-            background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+            background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)",
+            backgroundSize: "200% 200%",
             width: "64px",
             height: "64px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             borderRadius: "16px",
-            boxShadow: "0 4px 12px rgba(59, 130, 246, 0.2)"
+            boxShadow: "0 4px 12px rgba(59, 130, 246, 0.2)",
+            animation: "gradientShift 8s ease-in-out infinite, iconBounce 2s ease-in-out infinite"
           }}>
             👨‍💻
           </div>
@@ -209,7 +265,21 @@ export const About = () => (
                 fontWeight: "600",
                 display: "flex",
                 alignItems: "center",
-                gap: "6px"
+                gap: "6px",
+                transition: "all 0.3s ease",
+                cursor: "pointer"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)";
+                e.currentTarget.style.color = "white";
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 4px 12px rgba(59, 130, 246, 0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "white";
+                e.currentTarget.style.color = "#3b82f6";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
               }}>
                 <span style={{ fontSize: "1rem" }}>✓</span>
                 {strength}
@@ -260,7 +330,19 @@ export const About = () => (
               border: "1px solid rgba(59, 130, 246, 0.2)",
               fontSize: "0.9rem",
               fontWeight: "600",
-              color: "#3b82f6"
+              color: "#3b82f6",
+              transition: "all 0.3s ease",
+              cursor: "pointer"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)";
+              e.currentTarget.style.color = "white";
+              e.currentTarget.style.transform = "scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "white";
+              e.currentTarget.style.color = "#3b82f6";
+              e.currentTarget.style.transform = "scale(1)";
             }}>
               {lang}
             </span>
@@ -299,7 +381,19 @@ export const About = () => (
               border: "1px solid rgba(59, 130, 246, 0.2)",
               fontSize: "0.9rem",
               fontWeight: "600",
-              color: "#3b82f6"
+              color: "#3b82f6",
+              transition: "all 0.3s ease",
+              cursor: "pointer"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)";
+              e.currentTarget.style.color = "white";
+              e.currentTarget.style.transform = "scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "white";
+              e.currentTarget.style.color = "#3b82f6";
+              e.currentTarget.style.transform = "scale(1)";
             }}>
               {hobby}
             </span>
@@ -307,5 +401,21 @@ export const About = () => (
         </div>
       </div>
     </div>
+    
+    {/* Add animations */}
+    <style>{`
+      @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(3deg); }
+      }
+      @keyframes gradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+      @keyframes iconBounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+    `}</style>
   </section>
 );

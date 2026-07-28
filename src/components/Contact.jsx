@@ -35,15 +35,32 @@ export const Contact = () => {
   };
 
   return (
-  <section id="contact" className="section fade-in-up">
+  <section id="contact" className="section fade-in-up" style={{ position: "relative", overflow: "hidden" }}>
+    {/* Animated Background */}
+    <div style={{
+      position: "absolute",
+      top: "30%",
+      left: "-10%",
+      width: "450px",
+      height: "450px",
+      background: "radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%)",
+      borderRadius: "50%",
+      filter: "blur(50px)",
+      animation: "float 30s ease-in-out infinite",
+      zIndex: 0
+    }} />
+    
     {/* Highlights Section */}
     <div style={{
       maxWidth: "800px",
       margin: "0 auto 32px",
       padding: "24px",
-      background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)",
+      background: "linear-gradient(135deg, rgba(240,249,255,0.95) 0%, rgba(224,242,254,0.95) 100%)",
+      backdropFilter: "blur(10px)",
       borderRadius: "16px",
-      border: "1px solid rgba(59, 130, 246, 0.2)"
+      border: "1px solid rgba(59, 130, 246, 0.2)",
+      position: "relative",
+      zIndex: 1
     }}>
       <h3 style={{
         fontSize: "1.3rem",
@@ -74,7 +91,9 @@ export const Contact = () => {
       margin: "0 auto 32px",
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-      gap: "32px"
+      gap: "32px",
+      position: "relative",
+      zIndex: 1
     }}
     className="contact-form-grid">
       {/* Contact Form */}
@@ -234,20 +253,22 @@ export const Contact = () => {
               padding: "14px 24px",
               borderRadius: "8px",
               border: "none",
-              background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+              background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)",
+              backgroundSize: "200% 200%",
               color: "white",
               fontSize: "1rem",
               fontWeight: "600",
               cursor: "pointer",
               transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-              boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)"
+              boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)",
+              animation: "gradientShift 6s ease-in-out infinite"
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow = "0 6px 20px rgba(59, 130, 246, 0.4)";
+              e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
+              e.currentTarget.style.boxShadow = "0 8px 24px rgba(59, 130, 246, 0.5)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.transform = "translateY(0) scale(1)";
               e.currentTarget.style.boxShadow = "0 4px 12px rgba(59, 130, 246, 0.3)";
             }}
           >
@@ -306,8 +327,16 @@ export const Contact = () => {
                 color: "inherit",
                 transition: "all 0.2s"
               }}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = "#3b82f6"}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.15)"}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "#3b82f6";
+                e.currentTarget.style.transform = "translateX(4px)";
+                e.currentTarget.style.boxShadow = "0 4px 12px rgba(59, 130, 246, 0.15)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.15)";
+                e.currentTarget.style.transform = "translateX(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             >
               <div style={{
                 width: "40px",
@@ -343,8 +372,16 @@ export const Contact = () => {
                 color: "inherit",
                 transition: "all 0.2s"
               }}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = "#8b5cf6"}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.15)"}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "#8b5cf6";
+                e.currentTarget.style.transform = "translateX(4px)";
+                e.currentTarget.style.boxShadow = "0 4px 12px rgba(139, 92, 246, 0.15)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.15)";
+                e.currentTarget.style.transform = "translateX(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             >
               <div style={{
                 width: "40px",
@@ -382,8 +419,16 @@ export const Contact = () => {
                 color: "inherit",
                 transition: "all 0.2s"
               }}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = "#25D366"}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.15)"}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "#25D366";
+                e.currentTarget.style.transform = "translateX(4px)";
+                e.currentTarget.style.boxShadow = "0 4px 12px rgba(37, 211, 102, 0.15)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.15)";
+                e.currentTarget.style.transform = "translateX(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             >
               <div style={{
                 width: "40px",
@@ -510,6 +555,16 @@ export const Contact = () => {
             color: "inherit",
             transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
           }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-4px)";
+            e.currentTarget.style.boxShadow = "0 8px 20px rgba(0, 119, 181, 0.2)";
+            e.currentTarget.style.borderColor = "#0077b5";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "none";
+            e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.2)";
+          }}
         >
           <div style={{
             width: "40px",
@@ -562,6 +617,16 @@ export const Contact = () => {
               color: "inherit",
               transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
             }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-4px)";
+              e.currentTarget.style.boxShadow = "0 8px 20px rgba(30, 41, 59, 0.2)";
+              e.currentTarget.style.borderColor = "#1e293b";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.2)";
+            }}
           >
             <div style={{
               width: "40px",
@@ -598,6 +663,18 @@ export const Contact = () => {
         ))}
       </div>
     </div>
+    
+    {/* Add animations */}
+    <style>{`
+      @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-18px) rotate(4deg); }
+      }
+      @keyframes gradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+    `}</style>
   </section>
 );
 }

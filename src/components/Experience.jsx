@@ -6,15 +6,32 @@ export const Experience = () => {
   const companies = [...new Set(profile.experience.map(exp => exp.company))].length;
 
   return (
-    <section id="experience" className="section fade-in-up">
+    <section id="experience" className="section fade-in-up" style={{ position: "relative", overflow: "hidden" }}>
+      {/* Animated Background */}
+      <div style={{
+        position: "absolute",
+        top: "25%",
+        right: "-8%",
+        width: "450px",
+        height: "450px",
+        background: "radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)",
+        borderRadius: "50%",
+        filter: "blur(50px)",
+        animation: "float 32s ease-in-out infinite",
+        zIndex: 0
+      }} />
+      
       {/* Highlights Section */}
       <div style={{
         maxWidth: "800px",
         margin: "0 auto 32px",
         padding: "24px",
-        background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)",
+        background: "linear-gradient(135deg, rgba(240,249,255,0.95) 0%, rgba(224,242,254,0.95) 100%)",
+        backdropFilter: "blur(10px)",
         borderRadius: "16px",
-        border: "1px solid rgba(59, 130, 246, 0.2)"
+        border: "1px solid rgba(59, 130, 246, 0.2)",
+        position: "relative",
+        zIndex: 1
       }}>
         <h3 style={{
           fontSize: "1.3rem",
@@ -53,10 +70,12 @@ export const Experience = () => {
             <div style={{
               fontSize: "2rem",
               fontWeight: "800",
-              background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+              background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)",
+              backgroundSize: "200% 200%",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              marginBottom: "4px"
+              marginBottom: "4px",
+              animation: "gradientShift 8s ease-in-out infinite"
             }}>
               {totalYears}+
             </div>
@@ -78,10 +97,12 @@ export const Experience = () => {
             <div style={{
               fontSize: "2rem",
               fontWeight: "800",
-              background: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+              background: "linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #ec4899 100%)",
+              backgroundSize: "200% 200%",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              marginBottom: "4px"
+              marginBottom: "4px",
+              animation: "gradientShift 8s ease-in-out infinite"
             }}>
               {companies}
             </div>
@@ -124,7 +145,9 @@ export const Experience = () => {
       {/* Experience Timeline */}
       <div style={{
         maxWidth: "900px",
-        margin: "0 auto"
+        margin: "0 auto",
+        position: "relative",
+        zIndex: 1
       }}>
         {profile.experience.map((exp, idx) => (
           <div key={exp.company + exp.period} style={{
@@ -147,7 +170,17 @@ export const Experience = () => {
             <div className="card" style={{
               position: "relative",
               zIndex: 1,
-              overflow: "visible"
+              overflow: "visible",
+              transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+              cursor: "pointer"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateX(8px)";
+              e.currentTarget.style.boxShadow = "0 20px 50px rgba(59, 130, 246, 0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateX(0)";
+              e.currentTarget.style.boxShadow = "";
             }}>
               {/* Company Badge */}
               <div style={{
@@ -171,13 +204,15 @@ export const Experience = () => {
                     width: "56px",
                     height: "56px",
                     borderRadius: "50%",
-                    background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                    background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)",
+                    backgroundSize: "200% 200%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: "1.5rem",
                     boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)",
-                    flexShrink: 0
+                    flexShrink: 0,
+                    animation: "gradientShift 8s ease-in-out infinite, pulse 3s ease-in-out infinite"
                   }}>
                     {idx === 0 ? "🎯" : idx === 1 ? "⭐" : idx === 2 ? "🚀" : "💡"}
                   </div>
@@ -260,7 +295,19 @@ export const Experience = () => {
                         padding: "12px 14px",
                         background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
                         borderRadius: "8px",
-                        border: "1px solid rgba(148, 163, 184, 0.15)"
+                        border: "1px solid rgba(148, 163, 184, 0.15)",
+                        transition: "all 0.3s ease",
+                        cursor: "pointer"
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = "linear-gradient(135deg, rgba(59,130,246,0.05) 0%, rgba(139,92,246,0.05) 100%)";
+                        e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.3)";
+                        e.currentTarget.style.transform = "translateX(4px)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)";
+                        e.currentTarget.style.borderColor = "rgba(148, 163, 184, 0.15)";
+                        e.currentTarget.style.transform = "translateX(0)";
                       }}>
                         <span style={{
                           fontSize: "1rem",
@@ -287,6 +334,22 @@ export const Experience = () => {
           </div>
         ))}
       </div>
+      
+      {/* Add animations */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-18px) rotate(4deg); }
+        }
+        @keyframes gradientShift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+      `}</style>
     </section>
   );
 };

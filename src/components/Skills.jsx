@@ -46,15 +46,32 @@ export const Skills = () => {
   const totalSkills = Object.values(skills).reduce((acc, arr) => acc + arr.length, 0);
 
   return (
-    <section id="skills" className="section fade-in-up">
+    <section id="skills" className="section fade-in-up" style={{ position: "relative", overflow: "hidden" }}>
+      {/* Animated Background */}
+      <div style={{
+        position: "absolute",
+        top: "10%",
+        right: "-5%",
+        width: "400px",
+        height: "400px",
+        background: "radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)",
+        borderRadius: "50%",
+        filter: "blur(50px)",
+        animation: "float 25s ease-in-out infinite",
+        zIndex: 0
+      }} />
+      
       {/* Highlights Section */}
       <div style={{
         maxWidth: "800px",
         margin: "0 auto 32px",
         padding: "24px",
-        background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)",
+        background: "linear-gradient(135deg, rgba(240,249,255,0.95) 0%, rgba(224,242,254,0.95) 100%)",
+        backdropFilter: "blur(10px)",
         borderRadius: "16px",
-        border: "1px solid rgba(59, 130, 246, 0.2)"
+        border: "1px solid rgba(59, 130, 246, 0.2)",
+        position: "relative",
+        zIndex: 1
       }}>
         <h3 style={{
           fontSize: "1.3rem",
@@ -89,9 +106,19 @@ export const Skills = () => {
               background: "white",
               borderRadius: "10px",
               border: "1px solid rgba(59, 130, 246, 0.15)",
-              textAlign: "center"
+              textAlign: "center",
+              cursor: "pointer",
+              transition: "all 0.3s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-4px) scale(1.05)";
+              e.currentTarget.style.boxShadow = "0 8px 20px rgba(59, 130, 246, 0.2)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0) scale(1)";
+              e.currentTarget.style.boxShadow = "none";
             }}>
-              <div style={{ fontSize: "1.8rem", marginBottom: "4px" }}>{cat.icon}</div>
+              <div style={{ fontSize: "1.8rem", marginBottom: "4px", transition: "transform 0.3s ease" }}>{cat.icon}</div>
               <div style={{
                 fontSize: "0.85rem",
                 color: "#64748b",
@@ -105,11 +132,21 @@ export const Skills = () => {
       </div>
 
       {/* Skills Cards */}
-      <div className="card-grid">
+      <div className="card-grid" style={{ position: "relative", zIndex: 1 }}>
         {categories.map((category, idx) => (
           <div key={idx} className="card" style={{
             position: "relative",
-            overflow: "visible"
+            overflow: "visible",
+            transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+            cursor: "pointer"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-8px)";
+            e.currentTarget.style.boxShadow = "0 20px 50px rgba(59, 130, 246, 0.15)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "";
           }}>
             {/* Category Header */}
             <div style={{
@@ -121,14 +158,19 @@ export const Skills = () => {
               <div style={{
                 fontSize: "2rem",
                 background: category.gradient,
+                backgroundSize: "200% 200%",
                 width: "56px",
                 height: "56px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 borderRadius: "12px",
-                boxShadow: "0 4px 12px rgba(59, 130, 246, 0.2)"
-              }}>
+                boxShadow: "0 4px 12px rgba(59, 130, 246, 0.2)",
+                animation: "gradientShift 8s ease-in-out infinite",
+                transition: "transform 0.3s ease"
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = "rotate(10deg) scale(1.1)"}
+              onMouseLeave={(e) => e.currentTarget.style.transform = "rotate(0deg) scale(1)"}>
                 {category.icon}
               </div>
               <div style={{ flex: 1 }}>
@@ -163,9 +205,22 @@ export const Skills = () => {
                   gap: "10px",
                   padding: "10px 12px",
                   background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
+                  backgroundSize: "200% 200%",
                   borderRadius: "8px",
                   border: "1px solid rgba(148, 163, 184, 0.15)",
-                  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+                  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                  cursor: "pointer",
+                  animation: `fadeIn 0.6s ease-out ${skillIdx * 0.05}s backwards`
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "linear-gradient(135deg, rgba(59,130,246,0.05) 0%, rgba(139,92,246,0.05) 100%)";
+                  e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.3)";
+                  e.currentTarget.style.transform = "translateX(4px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)";
+                  e.currentTarget.style.borderColor = "rgba(148, 163, 184, 0.15)";
+                  e.currentTarget.style.transform = "translateX(0)";
                 }}>
                   <span style={{
                     fontSize: "1rem",
@@ -190,6 +245,22 @@ export const Skills = () => {
           </div>
         ))}
       </div>
+      
+      {/* Add animations */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        @keyframes gradientShift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </section>
   );
 };
