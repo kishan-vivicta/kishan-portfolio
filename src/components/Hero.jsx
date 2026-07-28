@@ -49,24 +49,36 @@ export const Hero = () => {
         position: "absolute",
         top: "-50%",
         right: "-10%",
-        width: "600px",
-        height: "600px",
-        background: "radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%)",
+        width: "700px",
+        height: "700px",
+        background: "radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(139,92,246,0.15) 30%, transparent 70%)",
         borderRadius: "50%",
         filter: "blur(60px)",
-        animation: "float 20s ease-in-out infinite",
+        animation: "float 20s ease-in-out infinite, colorShift 15s ease-in-out infinite",
         zIndex: 0
       }} />
       <div style={{
         position: "absolute",
         bottom: "-30%",
         left: "-5%",
-        width: "500px",
-        height: "500px",
-        background: "radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%)",
+        width: "600px",
+        height: "600px",
+        background: "radial-gradient(circle, rgba(236,72,153,0.2) 0%, rgba(139,92,246,0.15) 30%, transparent 70%)",
         borderRadius: "50%",
         filter: "blur(60px)",
-        animation: "float 25s ease-in-out infinite reverse",
+        animation: "float 25s ease-in-out infinite reverse, colorShift 18s ease-in-out infinite reverse",
+        zIndex: 0
+      }} />
+      <div style={{
+        position: "absolute",
+        top: "40%",
+        right: "30%",
+        width: "400px",
+        height: "400px",
+        background: "radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%)",
+        borderRadius: "50%",
+        filter: "blur(50px)",
+        animation: "float 30s ease-in-out infinite, colorShift 20s ease-in-out infinite",
         zIndex: 0
       }} />
 
@@ -116,17 +128,22 @@ export const Hero = () => {
           >
             <span style={{ display: "block", color: "#1e293b", marginBottom: "8px" }}>
               Hi, I'm <span style={{
-                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+                backgroundSize: "200% 200%",
                 WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent"
+                WebkitTextFillColor: "transparent",
+                animation: "gradientShift 6s ease-in-out infinite"
               }}>Kishan Kumar</span>
             </span>
             <span style={{
-              display: "block",
-              background: "linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899)",
+              display: "inline-block",
+              background: "linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899, #06b6d4)",
+              backgroundSize: "200% 200%",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              minHeight: "60px"
+              animation: "gradientShift 8s ease-in-out infinite",
+              minHeight: "60px",
+              minWidth: "600px"
             }}>
               {typedText}
               <span style={{
@@ -158,27 +175,34 @@ export const Hero = () => {
             marginBottom: "28px"
           }}>
             {[
-              { name: "Azure", gradient: "linear-gradient(135deg, #0078d4 0%, #50e6ff 100%)" },
-              { name: "Kubernetes", gradient: "linear-gradient(135deg, #326ce5 0%, #569ceb 100%)" },
-              { name: "Terraform", gradient: "linear-gradient(135deg, #623ce4 0%, #844fba 100%)" },
-              { name: "Azure AI", gradient: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)" },
-              { name: "MLOps", gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)" },
-              { name: "GitHub", gradient: "linear-gradient(135deg, #1e293b 0%, #334155 100%)" }
+              { name: "Azure", gradient: "linear-gradient(135deg, #0078d4 0%, #00bcf2 50%, #50e6ff 100%)", shadow: "rgba(0, 120, 212, 0.4)" },
+              { name: "Kubernetes", gradient: "linear-gradient(135deg, #326ce5 0%, #4d82f3 50%, #6b9dff 100%)", shadow: "rgba(50, 108, 229, 0.4)" },
+              { name: "Terraform", gradient: "linear-gradient(135deg, #623ce4 0%, #7c5dea 50%, #9b7ff0 100%)", shadow: "rgba(98, 60, 228, 0.4)" },
+              { name: "Azure AI", gradient: "linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%)", shadow: "rgba(139, 92, 246, 0.4)" },
+              { name: "MLOps", gradient: "linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #38bdf8 100%)", shadow: "rgba(6, 182, 212, 0.4)" },
+              { name: "GitHub", gradient: "linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%)", shadow: "rgba(30, 41, 59, 0.4)" }
             ].map((tech, idx) => (
               <span key={idx} style={{
                 padding: "10px 18px",
                 borderRadius: "10px",
                 background: tech.gradient,
+                backgroundSize: "200% 200%",
                 color: "white",
                 fontSize: "0.85rem",
                 fontWeight: "600",
-                boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
+                boxShadow: `0 4px 14px ${tech.shadow}`,
                 transition: "all 0.3s ease",
                 cursor: "default",
-                animation: `slideUp 0.6s ease-out ${idx * 0.1}s backwards`
+                animation: `slideUp 0.6s ease-out ${idx * 0.1}s backwards, gradientShift 8s ease-in-out infinite`
               }}
-              onMouseOver={(e) => e.currentTarget.style.transform = "translateY(-4px) scale(1.05)"}
-              onMouseOut={(e) => e.currentTarget.style.transform = "translateY(0) scale(1)"}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = "translateY(-4px) scale(1.05)";
+                e.currentTarget.style.boxShadow = `0 8px 20px ${tech.shadow}`;
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow = `0 4px 14px ${tech.shadow}`;
+              }}
               >
                 {tech.name}
               </span>
@@ -195,25 +219,27 @@ export const Hero = () => {
                 border: "none",
                 fontSize: "1rem",
                 cursor: "pointer",
-                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+                backgroundSize: "200% 200%",
                 color: "#ffffff",
                 fontWeight: "700",
-                boxShadow: "0 10px 30px rgba(59, 130, 246, 0.4)",
+                boxShadow: "0 10px 30px rgba(59, 130, 246, 0.5)",
                 textDecoration: "none",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "10px",
                 transition: "all 0.3s ease",
                 position: "relative",
-                overflow: "hidden"
+                overflow: "hidden",
+                animation: "gradientShift 6s ease-in-out infinite"
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow = "0 14px 40px rgba(59, 130, 246, 0.5)";
+                e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
+                e.currentTarget.style.boxShadow = "0 14px 40px rgba(139, 92, 246, 0.6)";
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 10px 30px rgba(59, 130, 246, 0.4)";
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow = "0 10px 30px rgba(59, 130, 246, 0.5)";
               }}
             >
               <span>🚀 View My Projects</span>
@@ -224,7 +250,8 @@ export const Hero = () => {
               style={{
                 padding: "14px 32px",
                 borderRadius: "12px",
-                border: "2px solid #3b82f6",
+                border: "2px solid transparent",
+                borderImage: "linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899) 1",
                 fontSize: "1rem",
                 cursor: "pointer",
                 background: "rgba(255, 255, 255, 0.9)",
@@ -235,17 +262,20 @@ export const Hero = () => {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "10px",
-                transition: "all 0.3s ease"
+                transition: "all 0.3s ease",
+                position: "relative"
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.background = "#3b82f6";
+                e.currentTarget.style.background = "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)";
                 e.currentTarget.style.color = "white";
-                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
+                e.currentTarget.style.boxShadow = "0 8px 25px rgba(59, 130, 246, 0.4)";
               }}
               onMouseOut={(e) => {
                 e.currentTarget.style.background = "rgba(255, 255, 255, 0.9)";
                 e.currentTarget.style.color = "#3b82f6";
-                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
               <span>💬 Let's Connect</span>
@@ -263,10 +293,10 @@ export const Hero = () => {
           }}
         >
           {[
-            { number: "9+", label: "Years Experience", sublabel: "Azure Cloud Architecture", icon: "💼", gradient: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)", delay: 0 },
-            { number: "11", label: "Professional Certifications", sublabel: "5 Azure + 6 Specialized", icon: "🏆", gradient: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)", delay: 0.1 },
-            { number: "20+", label: "Major Projects", sublabel: "Enterprise Scale Solutions", icon: "🚀", gradient: "linear-gradient(135deg, #ec4899 0%, #f97316 100%)", delay: 0.2 },
-            { number: "2", label: "AI/ML Platforms", sublabel: "From Scratch to Production", icon: "🧠", gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)", delay: 0.3 }
+            { number: "9+", label: "Years Experience", sublabel: "Azure Cloud Architecture", icon: "💼", gradient: "linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)", delay: 0 },
+            { number: "11", label: "Professional Certifications", sublabel: "5 Azure + 6 Specialized", icon: "🏆", gradient: "linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #ec4899 100%)", delay: 0.1 },
+            { number: "20+", label: "Major Projects", sublabel: "Enterprise Scale Solutions", icon: "🚀", gradient: "linear-gradient(135deg, #ec4899 0%, #f43f5e 50%, #f97316 100%)", delay: 0.2 },
+            { number: "2", label: "AI/ML Platforms", sublabel: "From Scratch to Production", icon: "🧠", gradient: "linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #3b82f6 100%)", delay: 0.3 }
           ].map((stat, idx) => (
             <div
               key={idx}
@@ -343,7 +373,9 @@ export const Hero = () => {
                 right: 0,
                 height: "4px",
                 background: stat.gradient,
-                opacity: 0.6
+                backgroundSize: "200% 200%",
+                opacity: 0.8,
+                animation: "gradientShift 8s ease-in-out infinite"
               }} />
             </div>
           ))}
@@ -355,6 +387,14 @@ export const Hero = () => {
         @keyframes float {
           0%, 100% { transform: translateY(0) rotate(0deg); }
           50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        @keyframes colorShift {
+          0%, 100% { opacity: 0.15; filter: blur(60px) hue-rotate(0deg); }
+          50% { opacity: 0.25; filter: blur(60px) hue-rotate(30deg); }
+        }
+        @keyframes gradientShift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
         }
         @keyframes pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
