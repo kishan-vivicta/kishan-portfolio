@@ -3,7 +3,7 @@ export const profile = {
   role: "Cloud & DevOps Engineer | Azure Architect",
   location: "Oslo, Norway",
   summary:
-    "Azure Architect and DevOps Engineer with 9+ years of experience designing, developing, and implementing cloud-native and DevOps solutions on Microsoft Azure. Strong in cloud adoption, IaC, CI/CD, security, and AI platforms.",
+    "Cloud Architect and DevOps Engineer with 10+ years of experience designing, developing, and implementing cloud-native and DevOps solutions on Microsoft Azure. Strong in cloud adoption, IaC, CI/CD, security, and AI/ML platforms.",
   contacts: {
     phone: "+4740596687",
     email: "kishankmr.kumar@gmail.com",
