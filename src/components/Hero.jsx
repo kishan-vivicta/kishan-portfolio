@@ -164,7 +164,7 @@ export const Hero = () => {
             }}
           >
             Architecting <strong style={{ color: "#3b82f6" }}>reliable, secure, and scalable</strong> Azure solutions. 
-            Specializing in cloud adoption, MLOps platforms, and AI infrastructure with <strong style={{ color: "#8b5cf6" }}>9+ years</strong> of enterprise experience.
+            Specializing in cloud adoption, MLOps platforms, and AI infrastructure with <strong style={{ color: "#8b5cf6" }}>10+ years</strong> of enterprise experience.
           </p>
 
           {/* Tech Stack Icons */}
@@ -293,7 +293,7 @@ export const Hero = () => {
           }}
         >
           {[
-            { number: "9+", label: "Years Experience", sublabel: "Azure Cloud Architecture", icon: "💼", gradient: "linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)", delay: 0 },
+            { number: "10+", label: "Years Experience", sublabel: "Azure Cloud Architecture", icon: "💼", gradient: "linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)", delay: 0 },
             { number: "11", label: "Professional Certifications", sublabel: "5 Azure + 6 Specialized", icon: "🏆", gradient: "linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #ec4899 100%)", delay: 0.1 },
             { number: "20+", label: "Major Projects", sublabel: "Enterprise Scale Solutions", icon: "🚀", gradient: "linear-gradient(135deg, #ec4899 0%, #f43f5e 50%, #f97316 100%)", delay: 0.2 },
             { number: "2", label: "AI/ML Platforms", sublabel: "From Scratch to Production", icon: "🧠", gradient: "linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #3b82f6 100%)", delay: 0.3 }

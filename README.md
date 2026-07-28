@@ -3,7 +3,7 @@
 [![Azure Solutions Architect](https://img.shields.io/badge/Microsoft-Azure%20Solutions%20Architect-blue?style=flat&logo=microsoft-azure)](https://learn.microsoft.com/en-us/credentials/certifications/azure-solutions-architect/)
 [![Azure AI Engineer](https://img.shields.io/badge/Microsoft-Azure%20AI%20Engineer%20Associate-blueviolet?style=flat&logo=microsoft-azure)](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/)
 
-Azure Architect with 9+ years experience designing enterprise-grade cloud-native solutions on Microsoft Azure. Specializing in:
+Azure Architect with 10+ years experience designing enterprise-grade cloud-native solutions on Microsoft Azure. Specializing in:
 
 - **Cloud Architecture**: AKS, ACI, App Services, Cosmos DB, Networking
 - **Infrastructure as Code**: Terraform, Bicep, ARM, Helm

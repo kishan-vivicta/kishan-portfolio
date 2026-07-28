@@ -62,7 +62,7 @@ export const About = () => (
             marginBottom: "4px",
             animation: "gradientShift 8s ease-in-out infinite"
           }}>
-            9+
+            10+
           </div>
           <div style={{
             fontSize: "0.9rem",

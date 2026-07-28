@@ -4,6 +4,9 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ScrollToTopOnMount } from "./components/ScrollToTopOnMount";
+import { ScrollProgress } from "./components/ScrollProgress";
+import { DarkModeToggle } from "./components/DarkModeToggle";
+import { ParticlesBackground } from "./components/ParticlesBackground";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { SkillsPage } from "./pages/SkillsPage";
@@ -20,7 +23,9 @@ function App() {
   return (
     <Router basename="/kishan-portfolio">
       <ScrollToTopOnMount />
-      <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      <ScrollProgress />
+      <ParticlesBackground />
+      <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", position: "relative", zIndex: 10 }}>
         <Navbar />
         <main className="app-container" style={{ flex: 1 }}>
           <Routes>
@@ -38,6 +43,7 @@ function App() {
         </main>
         <Footer />
         <ScrollToTop />
+        <DarkModeToggle />
       </div>
     </Router>
   );

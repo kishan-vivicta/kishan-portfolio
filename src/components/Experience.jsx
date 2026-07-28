@@ -2,7 +2,7 @@ import React from "react";
 import { profile } from "../data/profileData";
 
 export const Experience = () => {
-  const totalYears = 9;
+  const totalYears = 10;
   const companies = [...new Set(profile.experience.map(exp => exp.company))].length;
 
   return (
