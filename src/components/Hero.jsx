@@ -266,7 +266,7 @@ export const Hero = () => {
             { number: "9+", label: "Years Experience", sublabel: "Azure Cloud Architecture", icon: "💼", gradient: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)", delay: 0 },
             { number: "11", label: "Professional Certifications", sublabel: "5 Azure + 6 Specialized", icon: "🏆", gradient: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)", delay: 0.1 },
             { number: "20+", label: "Major Projects", sublabel: "Enterprise Scale Solutions", icon: "🚀", gradient: "linear-gradient(135deg, #ec4899 0%, #f97316 100%)", delay: 0.2 },
-            { number: "6", label: "MLOps Platforms", sublabel: "Built from Scratch", icon: "🧠", gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)", delay: 0.3 }
+            { number: "2", label: "AI/ML Platforms", sublabel: "From Scratch to Production", icon: "🧠", gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)", delay: 0.3 }
           ].map((stat, idx) => (
             <div
               key={idx}
