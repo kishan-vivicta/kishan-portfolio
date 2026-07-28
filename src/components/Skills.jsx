@@ -18,6 +18,12 @@ export const Skills = () => {
       skills: skills.aiPlatforms
     },
     {
+      title: "MLOps & Machine Learning",
+      icon: "🧠",
+      gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
+      skills: skills.mlops
+    },
+    {
       title: "Automation & Scripting",
       icon: "⚡",
       gradient: "linear-gradient(135deg, #ec4899 0%, #db2777 100%)",

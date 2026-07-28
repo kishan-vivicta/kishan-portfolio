@@ -544,55 +544,58 @@ export const Contact = () => {
           </div>
         </a>
 
-        <a
-          href={profile.contacts.github}
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "12px",
-            padding: "16px",
-            background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
-            borderRadius: "10px",
-            border: "1px solid rgba(59, 130, 246, 0.2)",
-            textDecoration: "none",
-            color: "inherit",
-            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-          }}
-        >
-          <div style={{
-            width: "40px",
-            height: "40px",
-            borderRadius: "8px",
-            background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            flexShrink: 0
-          }}>
-            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-            </svg>
-          </div>
-          <div style={{ flex: 1 }}>
+        {profile.contacts.github.map((githubAccount, index) => (
+          <a
+            key={index}
+            href={githubAccount.url}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              padding: "16px",
+              background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
+              borderRadius: "10px",
+              border: "1px solid rgba(59, 130, 246, 0.2)",
+              textDecoration: "none",
+              color: "inherit",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+            }}
+          >
             <div style={{
-              fontSize: "0.85rem",
-              color: "#64748b",
-              marginBottom: "2px"
+              width: "40px",
+              height: "40px",
+              borderRadius: "8px",
+              background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "white",
+              flexShrink: 0
             }}>
-              GitHub
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
             </div>
-            <div style={{
-              fontSize: "0.9rem",
-              fontWeight: "600",
-              color: "#1e293b"
-            }}>
-              {profile.socialHandles.github}
+            <div style={{ flex: 1 }}>
+              <div style={{
+                fontSize: "0.85rem",
+                color: "#64748b",
+                marginBottom: "2px"
+              }}>
+                GitHub ({githubAccount.label})
+              </div>
+              <div style={{
+                fontSize: "0.9rem",
+                fontWeight: "600",
+                color: "#1e293b"
+              }}>
+                {githubAccount.handle}
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+        ))}
       </div>
     </div>
   </section>

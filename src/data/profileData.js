@@ -1,18 +1,21 @@
 export const profile = {
   name: "Kishan Kumar",
   role: "Cloud & DevOps Engineer | Azure Architect",
-  location: "Kolkata, India",
+  location: "Oslo, Norway",
   summary:
     "Azure Architect and DevOps Engineer with 9+ years of experience designing, developing, and implementing cloud-native and DevOps solutions on Microsoft Azure. Strong in cloud adoption, IaC, CI/CD, security, and AI platforms.",
   contacts: {
-    phone: "+91 9689851960",
+    phone: "+4740596687",
     email: "kishankmr.kumar@gmail.com",
     linkedin: "https://www.linkedin.com/in/kishan-kumar-8a5b93b8",
-    github: "https://github.com/1199692"
+    github: [
+      { url: "https://github.com/kishan-vivicta", handle: "kishan-vivicta", label: "Professional" },
+      { url: "https://github.com/1199692", handle: "1199692", label: "Personal" }
+    ]
   },
   socialHandles: {
     linkedin: "kishan-kumar-8a5b93b8",
-    github: "1199692"
+    github: "kishan-vivicta"
   },
   skills: {
     cloudDevOps: [
@@ -28,6 +31,16 @@ export const profile = {
       "AI Foundation & Platform Architecture",
       "AI Infrastructure Design & IaC (Terraform)",
       "Secure, scalable & governed AI workloads"
+    ],
+    mlops: [
+      "Azure Machine Learning",
+      "ML Model Training, Deployment & Monitoring",
+      "MLOps Platform Architecture & Implementation",
+      "Azure Monitor, Log Analytics, Application Insights",
+      "ML Pipeline Automation & CI/CD",
+      "Azure Policy & Governance for ML Workloads",
+      "RBAC & Managed Identities for ML",
+      "Model Registry & Version Control"
     ],
     automation: ["PowerShell", "Bash", "Azure CLI", "Python"],
     development: [
@@ -100,6 +113,29 @@ export const profile = {
     }
   ],
   projects: [
+    {
+      name: "MLOps Platform",
+      customer: "Aker BP",
+      role: "Cloud / MLOps Platform Architect",
+      bullets: [
+        "Designed and implemented a reusable MLOps platform on Azure enabling Data Scientists to train, deploy, and monitor machine learning models in a governed environment.",
+        "Provisioned infrastructure using Terraform following Infrastructure as Code principles.",
+        "Established Azure Policy initiatives, RBAC, managed identities, and networking controls to enforce enterprise governance standards.",
+        "Integrated observability capabilities using Azure Monitor, Log Analytics, Application Insights, and dashboards for proactive monitoring.",
+        "Built reusable CI/CD pipelines for machine learning workloads and platform components."
+      ],
+      techStack: [
+        "Terraform",
+        "Azure Machine Learning",
+        "Azure Monitor",
+        "Log Analytics",
+        "Application Insights",
+        "Azure Policies",
+        "Entra ID",
+        "GitHub",
+        "Python"
+      ]
+    },
     {
       name: "Azure Landing Zone Infrastructure Management (Infrastructure as Code)",
       role: "Cloud Infrastructure Architect",
